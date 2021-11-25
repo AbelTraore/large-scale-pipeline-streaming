@@ -95,7 +95,7 @@ val kafkaParams = Map(
             //parsing des données
             val df_parsed = messageParsing(df_messages)
 
-            // calcul des indicateurs
+            //calcul des indicateurs
             val df_indicateurs = computeIndicators(df_parsed, s_session).cache()
 
             // écriture des indicateurs dans MySQL
