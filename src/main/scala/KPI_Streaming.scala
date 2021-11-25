@@ -9,7 +9,7 @@ import org.apache.spark.streaming.kafka010.ConsumerStrategies.Subscribe
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.spark.streaming.kafka010.{CanCommitOffsets, HasOffsetRanges, KafkaUtils}
 import org.apache.spark.streaming.kafka010.LocationStrategies.PreferConsistent
-//import Launcher._
+import Launcher._
 
 
 
@@ -35,16 +35,16 @@ object KPI_Streaming {
   )
 
   // parameters of the Spark consumer client, needed to connect to Kafka
-  private val bootStrapServers : String = ""
-  private val consumerGroupId : String = ""
-  private val consumerReadOrder : String = ""
+  private val bootStrapServers : String = Launcher.serversKafka
+  private val consumerGroupId : String = Launcher.groupId
+  private val consumerReadOrder : String = Launcher.readOrder
   // private val kerberosName : String = ""
   private val batchDuration  = 300
-  private val topics : Array[String] = Array("")
-  private val mySQLHost = ""
-  private val mySQLUser = ""
-  private val mySQLPwd = ""
-  private val mySQLDatabase = ""
+  private val topics : Array[String] = Array(Launcher.topicLecture)
+  private val mySQLHost = Launcher.mySQLHost_
+  private val mySQLUser = Launcher.mySQLUser_
+  private val mySQLPwd = Launcher.mySQLPwd_
+  private val mySQLDatabase = Launcher.mySQLDatabase_
 
   private var logger : Logger = LogManager.getLogger("Log_Console")
   var ss : SparkSession = null
