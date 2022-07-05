@@ -33,9 +33,11 @@ object Launcher extends App {
   val mySQLDatabase_ = properties.getProperty("mySQLDatabase")
 
 
-  val montrealTweets = new Location(new Location.Coordinate(-73.972902,45.410076), new Location.Coordinate(-73.474295,45.70479))
+  val montrealTweets = new Location(new Location.Coordinate(-73.972902,
+    45.410076), new Location.Coordinate(-73.474295,45.70479))
 
-  TwitterClient.getClient_Twitter(access_token, consumer_secret, consumer_key, token_secret, montrealTweets, topicLecture, serversKafka)
+  TwitterClient.getClient_Twitter(access_token, consumer_secret, consumer_key,
+    token_secret, montrealTweets, topicLecture, serversKafka)
 
 
 
